@@ -1,0 +1,43 @@
+<view class='container'>
+  <view class='wrapper'>
+   <!-- 搜索框 -->
+    <view class='search'>
+      <view class='inner'>
+        <image class='icon' src='/img/search_grey.png'></image>
+        <input placeholder='请输入菜名' maxlength='20' value='{{inputText}}' bindconfirm='inputFilter' ></input>
+      </view>
+       <text class='cancel' catchtap='cancel'>清空</text>
+    </view>
+  </view>
+  <view class='bg'></view>
+  <!-- 历史搜索 -->
+  <view class='hot' wx:if='{{!list && historyValue.length!==0}}'>
+    <view class='title'>
+    <view>历史搜索</view>
+    <image  src='../../img/delete.png' class='del' bindtap='delItem'></image>
+    </view>
+    <view class='history'>
+      <view class='item' wx:for="{{historyValue}}" wx:key='{{index}}' catchtap='search' data-name='{{item}}'>{{item}}</view>
+    </view>
+  </view>
+   <view class='bg'></view>
+  <!-- 菜单列表 -->
+  <view class='goods'>
+  <view class='list' wx:for="{{list}}" wx:key="{{index}}" data-id='{{item.id}}' data-name='{{item.name}}' catchtap='skipUrl'>
+    <image src='{{item.pic}}' mode='aspectFill'></image>
+    <view class='list-detail'>
+      <view class='title'>{{item.name}}</view>
+      <view class='imtro'>{{item.content}}</view>
+      <!-- <view class='tags'  wx:for="{{item.tags}}" wx:key="{{index}}">
+        <view class='tag'>{{item.intro}}</view>
+      </view> -->
+      <view class='step'>{{item.material.length}}个步骤</view>
+    </view>
+  </view>
+</view>
+</view>
+
+
+
+
+

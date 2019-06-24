@@ -1,0 +1,11 @@
+/**app.wxss**/
+Page {
+  background: #f4f6f9;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.iphonex-padding {
+  padding-bottom: 68rpx;
+}

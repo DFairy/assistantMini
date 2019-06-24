@@ -1,0 +1,144 @@
+<view class='container' catchtap='menuHide'>
+  <!-- 背景图 -->
+  <!-- <view class='bg'></view> -->
+  <image class='bg' wx:if='{{bcgSrc}}' src='{{bcgSrc}}' mode='aspectFill'></image>
+  <!-- 搜索栏 -->
+  <view class='search'>
+    <view class='wrapper'>
+      <image src='/img/search.png'></image>
+      <input placeholder='请输入城市名，快速查询天气信息' placeholder-class='placeholderClass' bindconfirm='commitSearch' value='{{searchText}}' ></input>
+    </view>
+  </view> 
+  <!-- 主体部分 -->
+  <view class='content'>
+    <!-- 用户 -->
+    <!-- <view class='avatarInfo'>
+      <open-data class='avatar' type='userAvatarUrl'></open-data>
+      <open-data class='name' type='userNickName'></open-data>
+    </view> -->
+    <view class='info'>
+      <!-- 定位信息 --> 
+      <view class='city'>
+        <view class='name' catchtap='toCitychoose'>
+          <image class='icon' src='/img/location_s_w.png' wx:if='{{located}}'></image>
+          <view class='val'>{{cityDatas.basic.location || '定位中'}}</view>
+          <image class='down' src='/img/down.png'></image>
+        </view>
+        <text class='time' >{{cityDatas.updateTimeFormat}} 更新</text>
+      </view>
+      <!-- 名言 -->
+      <view class='message'>种一颗大树最好的时间就是现在</view>
+      <!-- 温度 -->
+      <view class='temp num' decode='true'>{{cityDatas.now.tmp || '-'}}<text style='font-size:50rpx;position:relative;top:-20px;'>℃</text></view>
+      <!-- 天气状况 -->
+      <view class='temp'>{{cityDatas.now.cond_txt || '--'}}</view>
+      <text class='temp weather'>能见度 {{cityDatas.now.vis}}</text>
+    </view>
+    <!-- 7天预报 -->
+    <view class='guide' >
+      <view class='title'>7 天预报</view>
+      <view class='guide-content'>
+        <view class='item' wx:for='{{cityDatas.daily_forecast}}' wx:key='{{index}}'>
+          <view class=' i'>{{item.date}}</view>
+          <view class=' i'>{{item.tmp_min}}~{{item.tmp_max}}℃</view>
+          <view class='weather i'>
+            <text>{{item.cond_txt_d}}</text>
+            <image mode='widthFix' src='{{weatherIconUrl}}{{item.cond_code_d}}.png'></image>
+          </view>
+          <view class=' i'>{{item.wind_dir}}{{item.wind_sc}}级</view>
+        </view>
+      </view>
+    </view>
+    <!-- 体感温度 -->
+    <view class='details'>
+      <view class='detail' wx:for='{{detailsDic.key}}' wx:key='{{index}}'>
+        <view>{{detailsDic.val[item]}}</view>
+        <view>{{cityDatas.now[item]}}</view>
+      </view>
+    </view>
+    <!-- 24小时逐3小时预报 -->
+    <view class='hourly'>
+      <view class='title'>24 小时逐 3 小时预报</view>
+      <view class='hours'>
+        <swiper style='height:360rpx;' indicator-dots="{{false}}" autoplay="{{false}}" circular="{{false}}" duration="300" next-margin="50rpx">
+         
+            <swiper-item wx:for="{{hourlyDatas}}" wx:key="{{index}}">
+              <view class='hour'>
+                <view class='detail'>
+                  <view>温度(℃)</view>
+                  <view>{{item.tmp}}</view>
+                </view>
+                <view class='detail'>
+                  <view>天气</view>
+                  <view class='weather'>
+                    <text>{{item.cond_txt}}</text>
+                    <image mode='widthFix' src='{{weatherIconUrl}}{{item.cond_code}}.png'></image>
+                  </view>
+                </view>
+                <view class='detail'>
+                  <view>相对湿度(%)</view>
+                  <view>{{item.hum}}</view>
+                </view>
+                <view class='detail'>
+                  <view>露点温度(℃)</view>
+                  <view>{{item.dew}}</view>
+                </view>
+                <view class='detail'>
+                  <view>降水概率</view>
+                  <view>{{item.pop}}</view>
+                </view>
+                <view class='detail'>
+                  <view>风向</view>
+                  <view>{{item.wind_dir}}</view>
+                </view>
+                <view class='detail'>
+                  <view>风向角度(deg)</view>
+                  <view>{{item.wind_deg}}</view>
+                </view>
+                <view class='detail'>
+                  <view>风力(级)</view>
+                  <view>{{item.wind_sc}}</view>
+                </view>
+                <view class='detail'>
+                  <view>风速(mk/h)</view>
+                  <view>{{item.wind_spd}}</view>
+                </view>
+                <view class='detail'>
+                  <view>气压(mb)</view>
+                  <view>{{item.pres}}</view>
+                </view>
+                <view class='detail'>
+                  <view>云量</view>
+                  <view>{{item.cloud}}</view>
+                </view>
+              </view>
+              <view class='time'>{{item.time}}</view>
+            </swiper-item>
+          
+        </swiper>
+      </view>
+    </view>
+    <!-- 指数 -->
+    <view class='livingIndex' >
+      <view class='item' wx:for='{{cityDatas.lifestyle}}' wx:key='{{index}}'>
+        <image class='icon' src='/img/lifestyle_{{item.type}}.png'></image>
+        <view class='right'>
+          <view class='key'>{{lifestyles[item.type]}} {{item.brf}}</view>
+          <view class='value'>{{item.txt}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{openSettingButtonShow}}' class='openSettingButton'>
+    <image src='/img/unlock.png'></image>
+    <button open-type='openSetting'></button>
+  </view>
+  <!-- 悬浮菜单 -->
+  <view class='menus'>
+    <image src="/img/menu.png"class="menu main" catchtap="menuMain" animation="{{animationMain}}"></image>
+    <!-- <image src="/img/share_circle.png"class="menu" animation="{{animationOne}}"></image>
+    <button plain='true' open-type='share'  class='menu' animation="{{animationOne}}"></button> -->
+    <image src="/img/location.png" class="menu" animation="{{animationTwo}}" catchtap="location"></image>
+    <image src="/img/setting.png" animation="{{animationOne}}" class="menu" catchtap="menuToSetting"></image>
+  </view>
+</view>

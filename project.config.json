@@ -1,0 +1,116 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"appid": "wx36acfce5ea4b1373",
+	"projectname": "cloudmini",
+	"libVersion": "2.2.5",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 10,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "scanCode",
+					"pathName": "pages/scanCode/scanCode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "addImg",
+					"pathName": "pages/weather/weather",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "citychoose",
+					"pathName": "pages/citychoose/citychoose",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "selectBg",
+					"pathName": "pages/selectBg/selectBg",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "goodsList",
+					"pathName": "pages/goodsList/goodsList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "goodsDetail",
+					"pathName": "pages/goodsDetail/goodsDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "searchMenu",
+					"pathName": "pages/searchMenu/searchMenu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "menu",
+					"pathName": "pages/menu/menu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"scene": null
+				}
+			]
+		}
+	}
+}

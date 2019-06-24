@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/menu/menu",
+    "pages/citychoose/citychoose",
+    "pages/weather/weather",
+    "pages/selectBg/selectBg",
+    "pages/my/my",
+    "pages/systemInfo/systemInfo",
+    "pages/about/about",
+    "pages/goodsList/goodsList",
+    "pages/goodsDetail/goodsDetail",
+    "pages/searchMenu/searchMenu"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "小静子私人小助手",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#ffcd32",
+    "list": [
+      {
+        "pagePath": "pages/weather/weather",
+        "text": "天气预报",
+        "iconPath": "img/icon_05.png",
+        "selectedIconPath": "img/icon_5.png"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "菜谱",
+        "iconPath": "img/menu_03.png",
+        "selectedIconPath": "img/menu_3.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "img/icon_04.png",
+        "selectedIconPath": "img/icon_4.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

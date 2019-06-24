@@ -1,0 +1,108 @@
+page{
+  width: 100%;
+}
+.container{
+  width: 100%;
+  font-size: 24rpx;
+  background: #fff;
+}
+.titleImg{
+  width: 100%;
+  height: 500rpx;
+}
+.content{
+  padding: 30rpx 14rpx;
+  padding-top: 0;
+}
+.content .title{
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 14rpx; 
+  color: #ef5b71;
+}
+.imtro{
+  text-align: justify;
+  font-size: 24rpx;
+  color: #2b2929;
+  margin-bottom: 30rpx; 
+}
+.foods{
+  margin-bottom: 30rpx;
+}
+.foods .border{
+  border-top-left-radius:10rpx;
+  border-top-right-radius: 10rpx; 
+}
+.foods .foods-title{
+  padding: 16rpx;
+  background: #efefef;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #ef5b71;
+  text-align: center; 
+} 
+.ingredients{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ingredients view{
+  text-align: center;
+  flex:1;
+  padding: 14rpx 0;
+  border: 1rpx solid #efefef;
+}
+.steps{
+  /* margin-bottom: 30rpx; */
+  border-bottom: 1rpx solid #eee;
+}
+.steps:last-child{
+  border: 0;
+}
+.steps .steps-title{
+  padding: 16rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #ef5b71;
+  text-align: center; 
+}
+.stepImg{
+  width: 100%;
+  height: 300rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.steps-detail{
+  font-size: 24rpx;
+  color: rgb(32, 28, 28);
+  padding: 14rpx 0 30rpx 0;
+}
+.banner{
+  display: flex;
+  justify-content: space-around;
+}
+.banner .banner-detail{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30rpx;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee
+}
+.banner-detail .bannerImg{
+  width: 54rpx;
+  height: 54rpx;
+  margin-right: 14rpx;
+}
+.banner-cook{
+  font-size: 20rpx;
+  color: #aaa;
+}
+.banner-title{
+   font-size: 24rpx;
+  font-weight: bold;
+  color: #333;
+   margin-bottom: 10rpx;
+}
+

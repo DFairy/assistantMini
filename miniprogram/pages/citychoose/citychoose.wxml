@@ -1,0 +1,37 @@
+<view class='container'>
+  <view class='wrapper'>
+   <!-- 搜索框 -->
+    <view class='search'>
+      <view class='inner'>
+        <image class='icon' src='/img/search_grey.png'></image>
+        <input placeholder='请输入城市名，快速查询天气' maxlength='20' value='{{inputText}}' bindinput='inputFilter' bindconfirm='inputFilter'  bindconfirm='inputFilter'></input>
+      </view>
+       <text class='cancel' catchtap='cancel'>清空</text>
+    </view>
+  </view>
+  <!-- 猜你想找 -->
+  <view class='hot'>
+    <view class='title'>猜你想找</view>
+    <view class='cities'>
+      <view class='item active' catchtap='chooseCity'>
+        <image class='icon' src='/img/location_s_w.png'></image>
+        <view>定位</view>
+      </view>
+      <view class='item' catchtap='chooseCity' wx:for='{{hotCities}}' wx:key='{{index}}' data-name='{{item.name}}'>{{item.name}}</view>
+    </view>
+  </view>
+  <!-- 城市列表 -->
+  <view class='bottom'>
+    <view wx:key='{{index}}' wx:for='{{showItems}}'>
+      <view class='key'>{{index}}</view>
+      <view class='values'>
+        <view class='value' wx:for='{{item}}' wx:key='{{index}}' catchtap='chooseCity' data-name='{{item.name}}'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='empty' wx:if='{{!showItems}}'>暂无城市可以选择</view>
+</view>
+
+
+
+

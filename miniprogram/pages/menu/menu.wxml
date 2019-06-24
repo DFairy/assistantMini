@@ -1,0 +1,25 @@
+<view class='container'>
+  <!-- 左侧栏 -->
+  <scroll-view scroll-y='true' class='scroll-left'>
+    <view class='list {{classifySeleted==item.classid?"active":""}}' scroll-with-animation='true' wx:for='{{goods}}' wx:key='{{index}}' data-id="{{item.classid}}" catchtap='select'>
+        {{item.name}}
+    </view>
+  </scroll-view>
+  <!-- 右侧栏 -->
+  <scroll-view scroll-y='true' class='scroll-right' scroll-with-animation='true'  scroll-into-view="{{'inToView' + typeIndex}}" bindscroll="onGoodsScroll">
+    <view class='goods'  wx:for='{{goods}}' wx:key='{{index}}' data-id="{{item.classid}}" catchtap='select'>
+      <view class='title' id="{{'inToView'+item.classid}}">
+      <text class='title-icon icon1'></text>
+        {{item.name}}
+      <text class='title-icon icon2'></text>
+      <text></text>
+      </view>
+      <view  class='goods-list'>
+         <view class='goods-list-detail' wx:for='{{item.list}}' wx:key='{{id}}' data-name='{{item.name}}' data-id='{{item.classid}}' catchtap='skipUrl'>{{item.name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view>
+    <image src='../../img/searchMenu.png' class='menu' catchtap='search'></image>
+  </view>
+</view>

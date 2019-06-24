@@ -1,0 +1,96 @@
+.container{
+  width: 100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  font-size:30rpx;
+}
+.my-title{
+  width: 100%;
+  height: 260rpx;
+  position: relative;
+}
+.shadow{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,0.6);
+  /* z-index: 1; */
+}
+.my-title image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.avatarInfo{
+  background: #fff;
+  /* border: 1px solid black; */
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  position: relative;
+  text-align: center;
+  margin-top: -20rpx;
+}
+.avatarInfo .avatar{
+  display:block;
+  overflow:hidden;
+  width:120rpx;
+  height:120rpx;
+  border-radius:50%;
+  margin: 0 auto;
+  margin-top: -60rpx;
+  margin-bottom: 20rpx;
+  border: 8rpx solid #fff;
+  z-index: 1000;
+}
+.avatarInfo .name{
+  padding:0 20rpx;
+  font-size:30rpx;
+}
+.content{
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding:0 20rpx;
+}
+.list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin:0 20rpx; */
+  padding: 30rpx 0rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 24rpx;
+  /* color: #6e6e6e */
+}
+.listInfo{
+  display: flex;
+  align-items: center;
+}
+.listInfo .logo{
+width: 34rpx;
+height: 34rpx;
+padding-right: 18rpx;
+}
+.arrow-right{
+  width: 16rpx;
+  height: 16rpx;
+  border-top:2rpx solid #ccc;
+  border-right:2rpx solid #ccc; 
+  transform: rotate(45deg)
+}
+.list-button{
+  border: 0!important;
+  overflow: auto;
+  line-height:normal;
+  color: #000;
+}
+.content .title{
+  font-size: 28rpx;
+  color: #EFB82A;
+  margin: 20rpx 0;
+}

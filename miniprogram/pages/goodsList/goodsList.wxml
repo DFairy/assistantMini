@@ -1,0 +1,20 @@
+<view class='container'>
+<view class='goods'>
+  <view class='list' wx:for="{{list}}" wx:key="{{index}}" data-id='{{item.id}}' data-name='{{item.name}}' catchtap='skipUrl'>
+    <view class='detail' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{item.txtStyle}}" data-index='{{index}}'>
+      <image src='{{item.pic || item.img}}' mode='aspectFill' class='listImg'></image>
+      <view class='list-detail'>
+        <view class='title'>{{item.name}}</view>
+        <view class='imtro'>{{item.content}}</view>
+        <view class='step'>{{item.process.length||item.process}}个步骤</view>
+      </view>
+    </view>
+    <view class='love'>
+      <view class='oper-love'>
+          <!-- <image  src='../../img/love.png' wx:if='{{}}' class='loveImg' catchtap='collect' data-index='{{index}}' data-content='{{item.content}}' data-img='{{item.pic}}' data-name='{{item.name}}' data-id='{{item.id}}' data-material='{{item.material}}'></image> -->
+          <image src="{{item.collected?'../../img/loved.png':'../../img/love.png'}}" class='loveImg' catchtap='collect' data-index='{{index}}' data-content='{{item.content}}' data-img='{{item.pic}}' data-name='{{item.name}}' data-id='{{item.id}}' data-process='{{item.process}}' data-collected='{{item.collected}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+</view>

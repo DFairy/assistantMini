@@ -1,0 +1,10 @@
+<view class='chooseBcg'>
+  <view class='top'>
+    <view class='bcgs'>
+      <view class='border ' wx:for='{{bcgImgList}}' wx:key='{{index}}'>
+        <image src='{{item.url}}' catchtap='chooseBcg' data-index='{{index}}' data-src='{{item.url}}' mode='aspectFill'></image>
+      </view>
+      <view class='add' bindtap='upload'>+</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<view class='container' >
+<view>
+  <image wx:if='{{albums}}' src='{{albums}}' mode='aspectFill' class='titleImg'></image>
+  <view class='content'>
+    <view class='banner'>
+      <view class='banner-detail'>
+        <image src='../../img/people.png' class='bannerImg'></image>
+        <view >
+          <view class='banner-title'>用餐人数</view>
+          <view class='banner-cook'>{{peoplenum}}</view>
+        </view>
+      </view>
+      <view class='banner-detail'>
+        <image src='../../img/prepare.png' class='bannerImg'></image>
+        <view >
+          <view class='banner-title'>准备时间</view>
+          <view class='banner-cook'>{{preparetime}}</view>
+        </view>
+      </view>
+      <view class='banner-detail'>
+        <image src='../../img/cook.png' class='bannerImg'></image>
+        <view >
+          <view class='banner-title'>做饭时间</view>
+          <view class='banner-cook'>{{cookingtime}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='title'>{{title}}</view>
+    <view class='imtro'>{{imtro}}</view>
+    <view class='foods'>
+      <view class='foods-title border'>材料</view>
+      <view class='ingredients' wx:for='{{ingredients}}' wx:key='{{index}}'>
+        <view>{{item.mname}}</view>
+        <view>{{item.amount}}</view>
+      </view>
+    </view>
+    <view class='steps' wx:for='{{steps}}' wx:key='{{index}}'>
+       <view class='steps-title'>步骤{{index+1}}</view>
+       <image src='{{item.pic}}' mode='aspectFill' class='stepImg'></image>
+       <view class='steps-detail'>{{item.pcontent}}</view>
+    </view>
+  </view>
+</view>
+</view>
