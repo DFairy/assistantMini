@@ -11,6 +11,16 @@
 
 * 菜谱接口来自极速数据菜谱大全
 
+## 开发
+```
+# 克隆项目
+git clone https://github.com/DFairy/assistantMini.git
+
+# 在app.js中输入以下信息
+你的云开发id,
+和风天气的key(网址：https://heweather.com)
+极速数据菜谱大全key(网址：https://www.jisuapi.com/api/recipe)
+```
 
 
 
